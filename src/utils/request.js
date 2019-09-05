@@ -25,7 +25,8 @@ instance.interceptors.request.use(function (config) {
 })
 
 instance.interceptors.response.use(function (response) {
-  return response.data.data ? response.data.data : response.data
+  return response.data.data || response.data
+//   return response.data.data ? response.data.data : response.data
 }, function (err) {
   return Promise.reject(err)
 })
